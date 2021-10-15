@@ -6,45 +6,126 @@
         xmlns:local="clr-namespace:EquiposNBA"
         mc:Ignorable="d"
         Title="EquiposNBA" Height="450" Width="850" Icon="imgs/128.ico">
-        <StackPanel>
-        <Border CornerRadius="3" Margin="10" BorderThickness="4" BorderBrush="Black">
-            <StackPanel HorizontalAlignment="Stretch">
+    <Window.Resources>
+        <Style TargetType="{x:Type Border}">
+            <Setter Property="CornerRadius" Value="3"></Setter>
+            <Setter Property="Margin" Value="10"></Setter>
+            <Setter Property="BorderThickness" Value="4"></Setter>
+            <Setter Property="BorderBrush" Value="Black"></Setter>
+        </Style>
 
-                <StackPanel.Background>
+        <Style TargetType="{x:Type StackPanel}" x:Key="EquiposStackPanel">
+            <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+        </Style>
+
+        <Style TargetType="{x:Type StackPanel}" x:Key="LakersStackPanel" BasedOn="{StaticResource EquiposStackPanel}">
+            <Setter Property="Background">
+                <Setter.Value>
                     <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                         <GradientStop Color="Yellow" Offset="1"/>
                         <GradientStop Color="#FF9567D8" Offset="0.3"/>
                     </LinearGradientBrush>
-                </StackPanel.Background>
+                </Setter.Value>
+            </Setter>
+        </Style>
 
-                <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" FontWeight="Bold" FontSize="30">Los Angeles Lakers</TextBlock>
-                <WrapPanel HorizontalAlignment="Center">
-                    <Image Source="/imgs/14_lakers.png" Height="114" MinWidth="160"/>
-                    <Image Source="/imgs/23_lakers.png" Height="114" MinWidth="160"/>
-                    <Image Source="/imgs/3_lakers.png" Height="114" MinWidth="160"/>
-                    <Image Source="/imgs/39_lakers.png" Height="114" MinWidth="160"/>
-                    <Image Source="/imgs/9_lakers.png" Height="114" MinWidth="160"/>
-                </WrapPanel>
-            </StackPanel>
-        </Border>
-
-        <Border CornerRadius="3" Margin="10" BorderThickness="4" BorderBrush="Black">
-            <StackPanel HorizontalAlignment="Stretch">
-
-                <StackPanel.Background>
+        <Style TargetType="{x:Type StackPanel}" x:Key="MiamiStackPanel" BasedOn="{StaticResource EquiposStackPanel}">
+            <Setter Property="Background">
+                <Setter.Value>
                     <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                         <GradientStop Color="Red" Offset="1"/>
                         <GradientStop Color="Black" Offset="0.3"/>
                     </LinearGradientBrush>
-                </StackPanel.Background>
+                </Setter.Value>
+            </Setter>
+        </Style>
 
-                <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" FontWeight="Bold" FontSize="30" Foreground="White">Miami Heat</TextBlock>
-                <WrapPanel HorizontalAlignment="Center">
-                    <Image Source="/imgs/13_heat.png" Height="114" MinWidth="160"/>
-                    <Image Source="/imgs/14_heat.png" Height="114" MinWidth="160"/>
-                    <Image Source="/imgs/22_heat.png" Height="114" MinWidth="160"/>
-                    <Image Source="/imgs/7_heat.png" Height="114" MinWidth="160"/>
-                    <Image Source="/imgs/99_heat.png" Height="114" MinWidth="160"/>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="TextWrapping" Value="Wrap"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="FontSize" Value="30"></Setter>
+        </Style>
+
+        <Style TargetType="{x:Type TextBlock}" x:Key="MiamiTextBlock" BasedOn="{StaticResource {x:Type TextBlock}}">
+            <Setter Property="Foreground" Value="White"></Setter>
+        </Style>
+
+        <Style TargetType="{x:Type WrapPanel}">
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+        </Style>
+
+        <Style TargetType="{x:Type Image}">
+            <Setter Property="Height" Value="114"></Setter>
+            <Setter Property="Width" Value="160"></Setter>
+        </Style>
+
+        <Style TargetType="{x:Type Image}" x:Key="Lakers1Imagen" BasedOn="{StaticResource {x:Type Image}}">
+            <Setter Property="Source" Value="/imgs/14_lakers.png"></Setter>
+        </Style>
+
+        <Style TargetType="{x:Type Image}" x:Key="Lakers2Imagen" BasedOn="{StaticResource {x:Type Image}}">
+            <Setter Property="Source" Value="/imgs/23_lakers.png"></Setter>
+        </Style>
+
+        <Style TargetType="{x:Type Image}" x:Key="Lakers3Imagen" BasedOn="{StaticResource {x:Type Image}}">
+            <Setter Property="Source" Value="/imgs/3_lakers.png"></Setter>
+        </Style>
+
+        <Style TargetType="{x:Type Image}" x:Key="Lakers4Imagen" BasedOn="{StaticResource {x:Type Image}}">
+            <Setter Property="Source" Value="/imgs/39_lakers.png"></Setter>
+        </Style>
+
+        <Style TargetType="{x:Type Image}" x:Key="Lakers5Imagen" BasedOn="{StaticResource {x:Type Image}}">
+            <Setter Property="Source" Value="/imgs/9_lakers.png"></Setter>
+        </Style>
+
+        <Style TargetType="{x:Type Image}" x:Key="Miami1Imagen" BasedOn="{StaticResource {x:Type Image}}">
+            <Setter Property="Source" Value="/imgs/13_heat.png"></Setter>
+        </Style>
+
+        <Style TargetType="{x:Type Image}" x:Key="Miami2Imagen" BasedOn="{StaticResource {x:Type Image}}">
+            <Setter Property="Source" Value="/imgs/14_heat.png"></Setter>
+        </Style>
+
+        <Style TargetType="{x:Type Image}" x:Key="Miami3Imagen" BasedOn="{StaticResource {x:Type Image}}">
+            <Setter Property="Source" Value="/imgs/22_heat.png"></Setter>
+        </Style>
+
+        <Style TargetType="{x:Type Image}" x:Key="Miami4Imagen" BasedOn="{StaticResource {x:Type Image}}">
+            <Setter Property="Source" Value="/imgs/7_heat.png"></Setter>
+        </Style>
+
+        <Style TargetType="{x:Type Image}" x:Key="Miami5Imagen" BasedOn="{StaticResource {x:Type Image}}">
+            <Setter Property="Source" Value="/imgs/99_heat.png"></Setter>
+        </Style>
+
+    </Window.Resources>
+        <StackPanel>
+        <Border>
+            <StackPanel Style="{StaticResource LakersStackPanel}">
+
+                <TextBlock>Los Angeles Lakers</TextBlock>
+                <WrapPanel>
+                    <Image Style="{StaticResource Lakers1Imagen}"/>
+                    <Image Style="{StaticResource Lakers2Imagen}"/>
+                    <Image Style="{StaticResource Lakers3Imagen}"/>
+                    <Image Style="{StaticResource Lakers4Imagen}"/>
+                    <Image Style="{StaticResource Lakers5Imagen}"/>
+                </WrapPanel>
+            </StackPanel>
+        </Border>
+
+        <Border>
+            <StackPanel Style="{StaticResource MiamiStackPanel}">
+
+                <TextBlock Style="{StaticResource MiamiTextBlock}">Miami Heat</TextBlock>
+                <WrapPanel>
+                    <Image Style="{StaticResource Miami1Imagen}"/>
+                    <Image Style="{StaticResource Miami2Imagen}"/>
+                    <Image Style="{StaticResource Miami3Imagen}"/>
+                    <Image Style="{StaticResource Miami4Imagen}"/>
+                    <Image Style="{StaticResource Miami5Imagen}"/>
                 </WrapPanel>
             </StackPanel>
         </Border>
