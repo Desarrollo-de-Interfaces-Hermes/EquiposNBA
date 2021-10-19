@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="EquiposNBA" Height="450" Width="850" Icon="imgs/128.ico">
     <Window.Resources>
-        <Style TargetType="{x:Type Border}">
+        <Style TargetType="{x:Type Border}" x:Key="BordersEquipos">
             <Setter Property="CornerRadius" Value="3"></Setter>
             <Setter Property="Margin" Value="10"></Setter>
             <Setter Property="BorderThickness" Value="4"></Setter>
@@ -102,7 +102,7 @@
 
     </Window.Resources>
         <StackPanel>
-        <Border>
+        <Border Style="{StaticResource BordersEquipos}">
             <StackPanel Style="{StaticResource LakersStackPanel}">
 
                 <TextBlock>Los Angeles Lakers</TextBlock>
@@ -116,7 +116,7 @@
             </StackPanel>
         </Border>
 
-        <Border>
+        <Border Style="{StaticResource BordersEquipos}">
             <StackPanel Style="{StaticResource MiamiStackPanel}">
 
                 <TextBlock Style="{StaticResource MiamiTextBlock}">Miami Heat</TextBlock>
